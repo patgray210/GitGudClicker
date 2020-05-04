@@ -1,6 +1,6 @@
 var config = {
     type: Phaser.AUTO,
-    parent: 'phaser-example',
+    parent: 'phaser-clicker',
     width: 800,
     height: 600,
     scale: Phaser.Scale.FIT,
@@ -18,7 +18,7 @@ var hit = 0;
 var game = new Phaser.Game(config);
 
 function preload (){
-    this.load.image('bg', '../photos/sk4.png');
+    this.load.image('bg', '../photos/sky4.png');
     this.load.image('dot', '../photos/red_ball.png');
 }
 
@@ -33,7 +33,7 @@ function create (){
     }, this);
 
     //Display the game info
-    info = this.add.text(10, 10, '', { font: '48px Arial', fill: '#000000' });
+    info = this.add.text(10, 10, '', { font: '36px Arial', fill: '#000000' });
     
     timer = this.time.addEvent({ delay: 60000, callback: gameOver, callbackScope: this });
 }
@@ -55,8 +55,10 @@ function clickHandler (dot){
     this.input.on('gameobjectup', function (pointer, gameObject){
         gameObject.emit('clicked', gameObject);
     }, this);
+    
 }
 
 function gameOver (){
+    localStorage.setItem('score',hit);
     this.input.off('gameobjectup');
 }
