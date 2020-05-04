@@ -1,5 +1,4 @@
-const getName = () => document.getElementById('playerName').value;
-const getScore = () => document.getElementById('hit').value;
+const getName = () => document.getElementById('player-name').value;
 
 const getCallbacks = function(){
     const callbacks = {};

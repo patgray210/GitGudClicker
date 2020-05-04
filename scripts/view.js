@@ -11,7 +11,7 @@ const gameMenu = function(){
 }
 
 const newGameScreen = function(){
-    collectUserData();
+    playerName = document.getElementById('player-name').value;
     const view = document.getElementById('view');
     const html =    `<section>
                         <a class="btn btn-dark" id='start-game' href="game.html">Start the Challenge</a>
@@ -22,6 +22,7 @@ const newGameScreen = function(){
 }
 
 const leaderboardScreen = function(){
+    console.log(hit);
     const view = document.getElementById('view');
     const html =    `<section>
                         <h1>  Leaderboard </h1>
