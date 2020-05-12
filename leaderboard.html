@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Insert Tittle</title>
-        <script src="https://cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser-arcade-physics.min.js"></script> 
-
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -14,23 +11,12 @@
         <script src="./scripts/game.js"></script>
         <script src="./scripts/controllers.js"></script>
         <script src="./scripts/data.js"></script>
-        <style>
-            body{
-                background-image: url("./photos/bg.jpg");
-                background-attachment: fixed;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-
-            div {
-                padding-top: 17%;
-                padding-right: 30%;
-                padding-bottom: 30%;
-                padding-left: 30%;
-            }
-        </style>
+        <script src="./scripts/list-controllers.js"></script>
+        <script src="./scripts/list-model.js"></script>
+        <script src="./scripts/list-view.js"></script>
     </head>
-    <body>    
-        <div id='view'></div>
+    <body onload="listControllers(), getScore()">
+        <button id="display">Update and Display</button>
+        <ul id='leaderboardList'></ul>
     </body>
 </html>

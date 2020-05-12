@@ -18,8 +18,8 @@ var hit = 0;
 var game = new Phaser.Game(config);
 
 function preload (){
-    this.load.image('bg', '../photos/sky4.png');
-    this.load.image('dot', '../photos/red_ball.png');
+    this.load.image('bg', 'https://labs.phaser.io/assets/skies/sky4.png');
+    this.load.image('dot', 'https://labs.phaser.io/assets/sprites/red_ball.png');
 }
 
 function create (){

@@ -1,10 +1,11 @@
-const getName = () => document.getElementById('player-name').value;
+const getScore = function(){
+    score = localStorage.getItem('score');
+}
 
 const getCallbacks = function(){
     const callbacks = {};
     callbacks['home-menu'] = gameMenu;
     callbacks['new-game'] = newGameScreen;
-    callbacks['leaderboard-button'] = leaderboardScreen;
     return callbacks;
 }
 
@@ -15,3 +16,7 @@ const addController = function(...buttonIDs){
         button.addEventListener('click', callbacks[id]);
     }
 }
+
+
+
+
