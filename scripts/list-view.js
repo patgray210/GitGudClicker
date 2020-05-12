@@ -12,6 +12,7 @@ const showComments = function(sheetData){
 const addComment = function(row){
     const [time, name, score] = row;
     const List = document.getElementById('leaderboardList');
+    console.log(time,name,score);
     List.innerHTML += `<li>${time} ${name} ${score}</li>`;
 }
 

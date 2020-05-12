@@ -1,4 +1,5 @@
 const postToGoogleDB = function(data){
+    console.log('postToGoogleDB', 'data', data);
     const urlEncoded = encodeURL(urlPOST, data);
     const request = initRequest('POST', urlEncoded, 'no-cors');
     sendRequest(request)
@@ -6,6 +7,7 @@ const postToGoogleDB = function(data){
 }
 
 const encodeURL = function(path, params){
+    console.log('encodedURL', 'params', params);
     const url = new URL(path);
     for (let key in params){
         url.searchParams.set(key, params[key] );
@@ -21,6 +23,7 @@ const initRequest = function(verb, url, mode='cors'){
 }
 
 const sendRequest = async function(request) {
+    console.log('sendRequest', 'request', request)
     const response = await fetch(request);
     return response;
 }
@@ -33,7 +36,7 @@ const getFromGoogleDB = function(){
 
 const responseEventGET = async function (response){
     const sheetData = await response.json();
-    console.log(sheetData);
+    showComments(sheetData);
 }
 
 const responseEventPOST = response => getFromGoogleDB();
