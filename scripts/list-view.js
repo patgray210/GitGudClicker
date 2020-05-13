@@ -2,17 +2,35 @@ const initViews = function(){
     getFromGoogleDB();
 }
 
-const showComments = function(sheetData){
+const showData = function(sheetData){
+    var i = 0;
+    dataArray = new Array();
     clearChat();
     for (let row of sheetData.values){
-        addComment(row);
+        dataArray[i] = row;
+        i++
     }
+    dataArray.sort(compareSecondColumn);
+    for (i=0;i<10;i++){
+        row = dataArray[i];
+        addData(row);
+    }
+
+    function compareSecondColumn(a, c) {
+    if (a[2] === c[2]) {
+        return 0;
+    }
+        else {
+            return (a[2] > c[2]) ? -1 : 1;
+        }
+    }
+    console.log(dataArray);
 }
 
-const addComment = function(row){
+
+const addData = function(row){
     const [time, name, score] = row;
     const List = document.getElementById('leaderboardList');
-    console.log(time,name,score);
     List.innerHTML += `<li>${time} ${name} ${score}</li>`;
 }
 
