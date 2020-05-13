@@ -35,7 +35,7 @@ function create (){
     //Display the game info
     info = this.add.text(10, 10, '', { font: '36px Arial', fill: '#000000' });
     
-    timer = this.time.addEvent({ delay: 10000, callback: gameOver, callbackScope: this });
+    timer = this.time.addEvent({ delay: 60000, callback: gameOver, callbackScope: this });
 }
 
 function update (){
@@ -43,7 +43,7 @@ function update (){
 }
 
 function clickHandler (dot){
-    hit+= 100;
+    hit++;
     dot.off('clicked', clickHandler);
     dot.input.enabled = false;
     dot.setVisible(false);
