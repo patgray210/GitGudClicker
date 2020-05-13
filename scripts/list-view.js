@@ -1,13 +1,13 @@
-let listAmount;
+let listAmount=0;
 const initViews = function(){
     getFromGoogleDB();
 }
 
 const showData = function(sheetData){
     
-    listAmount =0;
-    clearChat();
     
+    clearChat();
+    listAmount=0;
         for (let row of sheetData.values){
             addData(row);
             listAmount++;
