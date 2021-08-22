@@ -35,7 +35,7 @@ function create (){
     //Display the game info
     info = this.add.text(10, 10, '', { font: '36px Arial', fill: '#000000' });
     
-    timer = this.time.addEvent({ delay: 10000, callback: gameOver, callbackScope: this });
+    timer = this.time.addEvent({ delay: 60000, callback: gameOver, callbackScope: this });
 }
 
 function update (){
