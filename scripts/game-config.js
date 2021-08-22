@@ -43,7 +43,7 @@ function update (){
 }
 
 function clickHandler (dot){
-    hit+=7;
+    hit+=1;
     dot.off('clicked', clickHandler);
     dot.input.enabled = false;
     dot.setVisible(false);
